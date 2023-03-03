@@ -1,0 +1,9 @@
+<resources>
+    <declare-styleable name="LabelTextView">
+        <attr name="labelString" format="string" />
+        <attr name="textString" format="string" />
+        <attr name="labelSize" format="dimension" />
+        <attr name="textSize" format="dimension" />
+        <attr name="padding" format="dimension" />
+    </declare-styleable>
+</resources>

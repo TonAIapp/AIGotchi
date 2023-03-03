@@ -1,0 +1,161 @@
+{
+	"id": 423,
+	"playlists": [
+		{
+			"items": [
+				{
+					"id": 37,
+					"duration": 10.0,
+					"main": {
+						"id": 524
+					}
+				},
+				{
+					"id": 36,
+					"duration": 10.0,
+					"audio": -1,
+					"content": 65537,
+					"main": {
+						"id": 6
+					}
+				},
+				{
+					"id": 50,
+					"duration": 10.0,
+					"audio": -1,
+					"content": 65539,
+					"main": {
+						"id": 5895
+					}
+				},
+				{
+					"id": 38,
+					"duration": 10.0,
+					"audio": -1,
+					"content": 65539,
+					"main": {
+						"id": 5284
+					}
+				},
+				{
+					"id": 39,
+					"duration": 10.0,
+					"audio": -1,
+					"content": 65540,
+					"main": {
+						"id": 84
+					}
+				},
+				{
+					"id": 40,
+					"duration": 10.0,
+					"audio": -1,
+					"content": 65541,
+					"main": {
+						"id": 8
+					}
+				},
+				{
+					"id": 41,
+					"duration": 10.0,
+					"audio": -1,
+					"content": 65542,
+					"main": {
+						"id": 7
+					}
+				},
+				{
+					"id": 43,
+					"duration": 10.0,
+					"audio": -1,
+					"content": 65544,
+					"main": {
+						"id": 52
+					}
+				}
+			]
+		}
+	],
+	"contents": [
+		{
+			"id": 7,
+			"type": "url",
+			"url": "https://www.beyonds.fr/fr/"
+		},
+		{
+			"id": 6,
+			"type": "url",
+			"url": "https://google.com/"
+		},
+		{
+			"id": 5895,
+			"type": "image",
+			"url": "https://d1y65kggrmix66.cloudfront.net/content/2017-11-12/IDts0VbnexaUtjjgLl4BDsE7qkIX4kEV.jpg",
+			"md5": "978c71ccb7a820d4a8defe0bf5c52a0c",
+			"size": "5425070"
+		},
+		{
+			"id": 8,
+			"type": "image",
+			"url": "https://d1y65kggrmix66.cloudfront.net/content/2017-11-12/d5N4hdnlGJFGAYEOajsZfh5EBEHsvoi1.jpg",
+			"md5": "ac0ca34bbba8ade7de1a4ed2ad371d7e",
+			"size": "7984788"
+		},
+		{
+			"id": 5284,
+			"type": "video",
+			"url": "https://d1y65kggrmix66.cloudfront.net/content/2019-05-29/1920x1080x25.000000_B0201iabl8lkTrBu4ifQkFeVudwsC9cO.mp4",
+			"md5": "c9332edcd5cb15168962069ac63ffe65",
+			"size": 4755342
+		},
+		{
+			"id": 52,
+			"type": "image",
+			"url": "https://d1y65kggrmix66.cloudfront.net/content/2019-05-29/kP1mdKgJv0u9U9TnS43DmO6WL3x8uxCd.jpg",
+			"md5": "90087fb1c9359220ff2908f07c7db270",
+			"size": "567198"
+		},
+		{
+			"id": 84,
+			"type": "video",
+			"url": "https://d1y65kggrmix66.cloudfront.net/content/2019-05-29/2SChnq8sRdgspzVXhYDNmiT6JgaWFk65.mp4",
+			"md5": "cb17d74a8219384618ccf521fcfdbe5a",
+			"size": 9758383
+		},
+		{
+			"id": 524,
+			"type": "video",
+			"url": "https://d1y65kggrmix66.cloudfront.net/content/2019-05-29/1920x1080x25.000000_9136qdQYsl8K0Xgfysni3EWQBgoIGiKG.mp4",
+			"md5": "f0caf79a2e82cb6227768a64da25c4f7",
+			"size": 49774654
+		},
+		{
+			"id": 34,
+			"type": "video",
+			"url": "https://d1y65kggrmix66.cloudfront.net/content/2019-05-29/3vMocxrUBh8JCu7sB1tdeVkQqGahAXYh.mp4",
+			"md5": "7fa9f78be8e3d73222e33790e904faeb",
+			"size": 34181547
+		},
+		{
+			"id": 18,
+			"type": "html",
+			"url": "https://d1y65kggrmix66.cloudfront.net/content/2018-03-06/eVszcQ7zGEaW9kX97PtI7CDF0rKzeypq.zip",
+			"md5": "ffbf7f960e365dc35dac975fb45f9094",
+			"size": 2347082
+		},
+		{
+			"id": 10052,
+			"type": "audio",
+			"url": "https://d1y65kggrmix66.cloudfront.net/content/2019-01-23/8tRznr6AaF1PCektBQm2OBxBZUv8akE9.mp3",
+			"md5": "6a6de84748093e15c7ed7d643b62c407",
+			"size": 9318705
+		},
+		{
+			"id": 10019,
+			"type": "audio",
+			"url": "https://d1y65kggrmix66.cloudfront.net/content/2019-01-23/9luTlArvKDkBBYCKhDeVlda8TYgClIJ7.mp3",
+			"md5": "415dc54d9aae1cc4954feaff0a59fe47",
+			"size": 6618975
+		}
+	]
+}

@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="PercentLayout">
+        <attr name="withPercent" format="float"/>
+        <attr name="heightPercent" format="float"/>
+        <attr name="leftPercent" format="float"/>
+        <attr name="topPercent" format="float"/>
+    </declare-styleable>
+</resources>

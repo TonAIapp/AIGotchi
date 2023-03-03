@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="com.digwex">
+
+  <application tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+    tools:replace="android:label"
+    android:label="Advelit">
+    <activity
+      android:name=".ActivationActivity"
+      tools:replace="android:theme"
+      android:theme="@style/AppTheme.FullScreen" />
+  </application>
+
+</manifest>

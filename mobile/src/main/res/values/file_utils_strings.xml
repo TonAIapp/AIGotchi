@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="size_byte" translatable="false">B</string>
+    <string name="size_kilo">Kb</string>
+    <string name="size_mega">Mb</string>
+    <string name="size_giga" translatable="false">Gb</string>
+    <string name="size_terra">Tb</string>
+</resources>

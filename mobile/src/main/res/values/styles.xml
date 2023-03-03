@@ -1,0 +1,106 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@android:color/white</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:colorBackground">@android:color/black</item>
+    </style>
+
+
+    <style name="NavView" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">#333333</item>
+        <item name="android:textColorHint">#b4ffffff</item>
+        <item name="colorControlHighlight">#b4ffffff</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorAccent">#fff</item>
+    </style>
+
+
+    <!--<style name="Sn.OutlinedButton" parent="Widget.AppCompat.Button">-->
+        <!--&lt;!&ndash;<item name="android:paddingLeft">@dimen/mtrl_btn_padding_left</item>&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="android:paddingRight">@dimen/mtrl_btn_padding_right</item>&ndash;&gt;-->
+        <!--<item name="background">#00ffffff</item>-->
+    <!--</style>-->
+
+    <style name="AppTheme.FullScreen">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme.FullScreen.Activation">
+        <item name="android:background">@color/colorGrayBackground</item>
+        <item name="android:windowBackground">@color/colorGrayBackground</item>
+        <item name="android:colorBackground">@color/colorGrayBackground</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="android:textColorHint">#b4ffffff</item>
+        <item name="colorAccent">#fff</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="EditText">
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@android:color/white</item>
+        <item name="colorControlHighlight">@android:color/white</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EditText.Pin">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:inputType">numberPassword</item>
+        <item name="android:selectAllOnFocus">true</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+    </style>
+
+    <style name="TextStyle">
+        <item name="android:textColor">@color/colorGrayDarkText</item>
+    </style>
+
+    <style name="BackButtonStyle">
+        <item name="android:textColor">@color/colorGrayDarkText</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:drawableLeft">@drawable/ic_keyboard_backspace_grey_48dp</item>
+        <item name="android:text">@string/back</item>
+        <item name="android:drawablePadding">20dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="HintLabel" parent="TextStyle">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="ErrorLabel">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:drawableLeft">@drawable/ic_close_grey_48dp</item>
+    </style>
+
+    <style name="ButtonText">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="Logo">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">50sp</item>
+    </style>
+
+</resources>

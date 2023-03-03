@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <ImageView
+    android:id="@+id/image_render"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0"
+    android:scaleType="fitXY" />
+
+  <com.digwex.components.views.HtmlView
+    android:id="@+id/html_render"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0" />
+
+  <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+    android:id="@+id/video_render"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0"
+    app:resize_mode="fill" />
+</merge>

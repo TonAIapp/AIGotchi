@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="190dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/orientation"
+        android:textColor="#b4ffffff"
+        android:textSize="@dimen/customTitle"
+        tools:ignore="HardcodedText" />
+
+      <ListView
+        android:id="@+id/orientation"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:choiceMode="singleChoice"
+        android:scrollbars="none"
+        tools:listitem="@layout/simple_orientation_list_singlechoise" />
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:errorEnabled="false">
+
+        <EditText
+          android:id="@+id/expanding_timeout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Expanding timeout"
+          android:inputType="number"
+          android:singleLine="true"
+          android:textColor="#fff"
+          android:textColorHint="#b4ffffff"
+          tools:ignore="HardcodedText" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:errorEnabled="false">
+
+        <EditText
+          android:id="@+id/window_x"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="X"
+          android:inputType="number"
+          android:singleLine="true"
+          android:textColor="#fff"
+          android:textColorHint="#b4ffffff" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="false">
+
+        <EditText
+          android:id="@+id/window_y"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Y"
+          android:inputType="number"
+          android:singleLine="true"
+          android:textColor="#fff"
+          android:textColorHint="#b4ffffff" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="false">
+
+        <EditText
+          android:id="@+id/window_width"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Width"
+          android:inputType="number"
+          android:singleLine="true"
+          android:textColor="#fff"
+          android:textColorHint="#b4ffffff" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="false">
+
+        <EditText
+          android:id="@+id/window_height"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Height"
+          android:inputType="number"
+          android:singleLine="true"
+          android:textColor="#fff"
+          android:textColorHint="#b4ffffff" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.digwex.components.views.LabelTextView
+        android:id="@+id/app_ip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:visibility="gone"
+        app:labelString="IP-address"
+        app:textString="" />
+
+      <com.digwex.components.views.LabelTextView
+        android:id="@+id/app_mac_wifi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="18dp"
+        android:visibility="gone"
+        app:labelString="MAC-address WI-FI"
+        app:textString="" />
+
+      <com.digwex.components.views.LabelTextView
+        android:id="@+id/app_mac_lan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="18dp"
+        android:visibility="gone"
+        app:labelString="MAC-address LAN"
+        app:textString="" />
+    </LinearLayout>
+  </ScrollView>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="155dp"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+
+    <!--android:background="#64fffefe"/>-->
+
+
+
+
+    <Button
+      android:id="@+id/save_config"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="2dp"
+      android:layout_marginEnd="2dp"
+      android:text="Save" />
+
+    <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="2dp"
+      android:layout_marginEnd="2dp"
+      android:onClick="onClickReactivateApp"
+      android:text="Deactivate" />
+
+    <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="2dp"
+      android:layout_marginEnd="2dp"
+      android:onClick="onClickCloseApp"
+      android:text="Close" />
+
+  </LinearLayout>
+</RelativeLayout>

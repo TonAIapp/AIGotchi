@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hint_label"
+            style="@style/HintLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/password_hint"
+            android:textSize="20sp"
+            tools:ignore="RtlHardcoded" />
+
+
+        <EditText
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="-4dp"
+            android:layout_marginStart="-4dp"
+            android:hint="Введите PIN-код"
+            android:inputType="numberPassword"
+            android:singleLine="true"
+
+            android:textColor="#fff"
+            android:textColorHighlight="#b4ffffff"
+            android:textColorHint="#b4ffffff" />
+
+
+        <TextView
+            android:id="@+id/send_button"
+            style="@style/ButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Продолжить" />
+
+    </LinearLayout>
+</LinearLayout>

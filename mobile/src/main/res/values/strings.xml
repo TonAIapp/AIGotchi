@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name" translatable="false">AIGotchi</string>
+  <string name="back">back</string>
+  <string name="error_activation">Activation error</string>
+  <string name="error_connection_unavailable">No connection</string>
+  <string name="error_empty_pin">Pin-code is empty</string>
+  <string name="next">next</string>
+  <string name="title_choose_storage">Select storage</string>
+  <string name="continue1">continue</string>
+  <string name="error_incorrect_password">Input pin-code</string>
+  <string name="title_activation">Activating the device</string>
+  <string name="password_hint">Enter password</string>
+  <string name="external_memory">External memory</string>
+  <string name="free_space">free:</string>
+  <string name="try_again">Try again</string>
+  <string name="internal_memory">Internal memory</string>
+  <string name="storages_format" translatable="false">%1$s, %2$s %3$s</string>
+  <string name="hidden_bar">Hide navigation</string>
+  <string name="error_service_not_binded">Could not connect to the service.</string>
+  <string name="error_service_busy">The service is busy. Please try again later</string>
+  <string name="error_status_402">The server does not have a license to activate this device</string>
+  <string name="error_status_406">This device is not supported by the server</string>
+  <string name="error_status_422">Invalid PIN</string>
+  <string name="status_activate_init">Initialize data</string>
+  <string name="status_connected_synchronising">Connection established, synchronization in progress</string>
+  <string name="status_connecting">There is a connection to the network</string>
+  <string name="status_downloading">Synchronization. Downloading content</string>
+  <string name="error_sync">Sync Error</string>
+  <string name="update_action">Select an action (%d)</string>
+  <string name="grant_access">Grant access</string>
+  <string name="admin_activate">You can not continue using the application. Activate devices with administrative rights</string>
+  <string name="activate">Activate</string>
+  <string name="exit">Exit</string>
+  <string name="permission_never">You did not provide the necessary permissions. Restart the application or go to the settings and grant permission to work with the memory</string>
+  <string name="start_error">Can not access the required directories. Try restarting the app</string>
+  <string name="start_error_title">Startup error</string>
+  <string name="input_code">Input code</string>
+  <string name="orientation">Orientation</string>
+  <string-array name="orientation_choise">
+    <item>Landspace</item>
+    <item>Portrait</item>
+    <item>Landspace(reverse)</item>
+    <item>Portrait(reverse)</item>
+  </string-array>
+  <!--<string name="size_mega" translatable="true">Mb</string>-->
+  <!--<string name="size_giga" translatable="true">Gb</string>-->
+  <!--<string name="size_terra" translatable="true">Tb</string>-->
+  <!--<string name="size_kilo" translatable="true">Kb</string>-->
+
+  <string name="advelit_bot_info" translatable="false">Open <b>dashboard.advelit.com</b> and enter this pin to pair this display ith a screen.</string>
+</resources>

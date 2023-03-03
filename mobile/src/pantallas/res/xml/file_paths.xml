@@ -1,0 +1,9 @@
+<paths>
+  <files-path
+    name="update"
+    path="update/" />
+  <external-path
+    name="update"
+    path="Pantallas/update/" />
+  <!--<external-path name="video" path="storage/visiobox/update" />-->
+</paths>
