@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  app:
+    container_name: synthia
+    networks:
+      - go_net
+    ports:
+      - "8888:8080"
+    build:
+      context: ${PROJECT_PATH} # PROJECT_PATH is full path to project directory, required
+      dockerfile: ${PROJECT_PATH}/deploy/Dockerfile #${PROJECT_PATH}/deploy/Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ${CONFIG_PATH}:/app/config/
+
+  redis:
+    image: redis:6.2-alpine
+    restart: always
+    networks:
+      - go_net
+    ports:
+      - "6379:6379"
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - /root/redis/cash:/data
+
+  dozzle:
+    container_name: "dozzle"
+    image: amir20/dozzle:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - go_net
+    ports:
+      - "9999:8080"
+    depends_on:
+      - app
+    environment:
+      - DOZZLE_NO_ANALYTICS=true
+      - DOZZLE_USERNAME=${DOZZLE_USERNAME}
+      - DOZZLE_PASSWORD=${DOZZLE_PASSWORD}
+      - DOZZLE_KEY=true
+
+networks:
+  go_net:
+    driver: bridge
