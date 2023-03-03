@@ -52,8 +52,6 @@ class MainApplication : MultiDexApplication() {
   override fun onCreate() {
     super.onCreate()
 
-    Log.println(WARN, MainActivity::class.java, "GOOOOOOO")
-
     JodaTimeAndroid.init(this)
 
     val context: Context = applicationContext

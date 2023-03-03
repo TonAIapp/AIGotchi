@@ -9,7 +9,7 @@ import com.digwex.utils.SharedPreferencesUtils
 object Config {
   const val PREFERENCES_KEY_ACTIVATION_ACCESS_TOKEN = "activation.token"
   const val  PREFERENCES_KEY_ACTIVATION_PIN = "activation.pin"
-  const val PREFERENCES_KEY_DEVICE_ID = "activation.device_id"
+  private const val PREFERENCES_KEY_DEVICE_ID = "activation.device_id"
 
   private const val PREFERENCES_KEY_ACTIVATION_ORIENTATION = "activation.orientation"
   private const val PREFERENCES_KEY_SETTINGS_WINDOWS_X = "settings.window.x"
@@ -30,9 +30,6 @@ object Config {
   private const val PREFERENCES_KEY_STATS_TRAFFIC_TXBYTESFORDAY = "stats.traffic.txBytesForDay"
   private const val PREFERENCES_KEY_STATS_TRAFFIC_NEXTCLEARTIME = "stats.traffic.nextClearTime"
 
-  private const val PREFERENCES_KEY_UPDATE_VERSION_CODE = "update.version.code"
-  private const val PREFERENCES_KEY_UPDATE_PATH = "update.path"
-
   private var mX: Int = 0
   private var mY: Int = 0
   private var mWidth: Int = -1
@@ -42,7 +39,7 @@ object Config {
   private var mExpanding: Int = 10
   private var mLastSyncId: Int = 0
   private var mAccessToken: String = ""
-  private var mPlayerId: Int = -1
+  private var mTelegramId: Long = -1
   private var mPin: String = ""
   private var mExternalStorage: String = ""
   private var mInternalStorage: String = ""
@@ -54,14 +51,13 @@ object Config {
   private var mContentPath: String = ""
 
   private var mApp: MainApplication = MainApplication.instance
-  private var mPreferences: SharedPreferences
+  private var mPreferences: SharedPreferences = mApp.mPreferences
 
   init {
-    mPreferences = mApp.mPreferences
     mAccessToken = SharedPreferencesUtils.getString(mPreferences,
       PREFERENCES_KEY_ACTIVATION_ACCESS_TOKEN, mAccessToken)
-    mPlayerId = SharedPreferencesUtils.getInt(mPreferences,
-      PREFERENCES_KEY_DEVICE_ID, mPlayerId)
+    mTelegramId = SharedPreferencesUtils.getLong(mPreferences,
+      PREFERENCES_KEY_DEVICE_ID, mTelegramId)
     mPin = SharedPreferencesUtils.getString(mPreferences, PREFERENCES_KEY_ACTIVATION_PIN, mPin)
 
     mInternalStorage = SharedPreferencesUtils.getString(mPreferences,
@@ -113,19 +109,8 @@ object Config {
       PREFERENCES_KEY_EXPANDING_TIMEOUT, 10)
   }
 
-  fun save() {
-    mPreferences.edit()
-      .putInt(PREFERENCES_KEY_SETTINGS_WINDOWS_X, mX)
-      .putInt(PREFERENCES_KEY_SETTINGS_WINDOWS_Y, mY)
-      .putInt(PREFERENCES_KEY_SETTINGS_WINDOWS_W, mWidth)
-      .putInt(PREFERENCES_KEY_SETTINGS_WINDOWS_H, mHeight)
-      .putInt(PREFERENCES_KEY_ROTATION, mRotation)
-      .putInt(PREFERENCES_KEY_EXPANDING_TIMEOUT, mExpanding)
-      .apply()
-  }
-
   val itialized: Boolean
-    get() = mAccessToken != "" && mPlayerId != -1
+    get() = mTelegramId != -1L
 
   var x: Int
     get() = mX
@@ -176,10 +161,14 @@ object Config {
       mLastSyncId = value
     }
 
-  var playerId: Int
-    get() = mPlayerId
+  var telegramId: Long
+    get() = mTelegramId
     set(value) {
-      mPlayerId = value
+      mTelegramId = value
+
+      mPreferences.edit()
+        .putLong(PREFERENCES_KEY_DEVICE_ID, telegramId)
+        .apply()
     }
 
   var accessToken: String
@@ -210,16 +199,8 @@ object Config {
         .apply()
     }
 
-  var updateVersionCode: Int
-    get() = mPreferences.getInt(PREFERENCES_KEY_UPDATE_VERSION_CODE, -1)
-    set(value) = mPreferences.edit().putInt(PREFERENCES_KEY_UPDATE_VERSION_CODE, value).apply()
-
-  var updatePath: String
-    get() = mPreferences.getString(PREFERENCES_KEY_UPDATE_PATH, "") ?: ""
-    set(value) = mPreferences.edit().putString(PREFERENCES_KEY_UPDATE_PATH, value).apply()
-
-  var lastUnix: Long
-    get() = mPreferences.getLong(PREFERENCES_KEY_LASTUNIX, System.currentTimeMillis())
+  var nextUnix: Long
+    get() = mPreferences.getLong(PREFERENCES_KEY_LASTUNIX, 0)
     set(value) = mPreferences.edit().putLong(PREFERENCES_KEY_LASTUNIX, value).apply()
 
   var lastOffset: Int
@@ -266,9 +247,4 @@ object Config {
         PREFERENCES_KEY_STATS_TRAFFIC_NEXTCLEARTIME, value)
     }
 
-  var contentPath: String
-    get() = mContentPath
-    set(value) {
-      mContentPath = value
-    }
 }

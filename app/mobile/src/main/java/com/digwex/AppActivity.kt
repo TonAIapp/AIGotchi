@@ -6,13 +6,13 @@ import android.content.Intent
 import android.content.res.Configuration
 
 import android.os.Bundle
+import android.util.Log
 
 import android.view.View
 
-import android.widget.ImageView
 import android.widget.RelativeLayout
+import com.digwex.service.BackgroundService
 
-import com.digwex.service.TimeService
 import com.digwex.service.WatchDogService
 import java.util.*
 import javax.inject.Inject
@@ -20,10 +20,6 @@ import javax.inject.Inject
 @Suppress("UNUSED_PARAMETER")
 class AppActivity : ImmersiveAppCompatActivity(){
 
-
-  @Inject lateinit var mTimeService: TimeService
-
-  private var mDrawSplash: Array<ImageView>? = null
 
   private lateinit var mApp: MainApplication
   private lateinit var mSplash: RelativeLayout
@@ -34,7 +30,6 @@ class AppActivity : ImmersiveAppCompatActivity(){
 
     mApp = MainApplication.instance
     mApp.appComponent.inject(this)
-    mTimeService.start()
     mSplash = findViewById(R.id.splash)
 
 
@@ -59,7 +54,21 @@ class AppActivity : ImmersiveAppCompatActivity(){
 //      }
 //    }
 //    startService(Intent(mApp.applicationContext, WatchDogService::class.java))
-//    startService(Intent(mApp.applicationContext, BackgroundService::class.java))
+
+    com.digwex.components.log.Log.println(
+      Log.INFO,
+      AppActivity::class.java,
+      "Itialized: ${Config.telegramId}"
+    )
+
+    if(Config.telegramId!=-1L) {
+      startService(
+        Intent(
+          mApp.applicationContext,
+          BackgroundService::class.java
+        )
+      )
+    }
   }
 
   override fun onStart() {

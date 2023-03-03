@@ -28,16 +28,36 @@ class MainActivity : ImmersiveAppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    println(INFO, MainActivity::class.java, "Start v" + BuildConfig.VERSION_NAME)
+    println(
+      INFO,
+      MainActivity::class.java,
+      "Start v" + BuildConfig.VERSION_NAME
+    )
 
     MainApplication.instance.appComponent.inject(this)
 
     val action: String? = intent?.action
-    val data: Uri? = intent?.data
+    val uri: Uri? = intent?.data
 
 
-    println(INFO, MainActivity::class.java, "action: $action | uri: ${data
-      .toString()}" )
+    println(
+      INFO,
+      MainActivity::class.java,
+      "action: ${action ?: ""} | uri: $uri"
+    )
+
+
+    if (!Config.itialized && action != null && uri != null) {
+      val id: String? = uri.getQueryParameter("id")
+
+      if (id != null) {
+        Config.telegramId = id.toLongOrNull() ?: -1L
+
+        println(INFO, MainActivity::class.java, "Activate with telegramId: " +
+          "${Config.telegramId}")
+      }
+    }
+
 
 //    mAllerts = arrayOf(
 //      AlertDialog.Builder(this, R.style.Theme_AppCompat_Light_Dialog_Alert),
@@ -65,7 +85,6 @@ class MainActivity : ImmersiveAppCompatActivity() {
 //      finish()
 //      AndroidUtils.exitApplicationAnRemoveFromRecent(this)
 //    }
-
     start()
   }
 
@@ -132,10 +151,9 @@ class MainActivity : ImmersiveAppCompatActivity() {
 //  }
 
   private fun unlockScreen() {
-    window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON or
-      WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD or
-      WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED or
-      WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON)
+    window.addFlags(
+      WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON or WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD or WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED or WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
+    )
   }
 
   private fun start() {
@@ -162,10 +180,11 @@ class MainActivity : ImmersiveAppCompatActivity() {
 //  }
 
   private fun checkStoragePermission(): Boolean {
-    return ContextCompat.checkSelfPermission(this,
-      Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED ||
-      ContextCompat.checkSelfPermission(this,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+    return ContextCompat.checkSelfPermission(
+      this, Manifest.permission.READ_EXTERNAL_STORAGE
+    ) == PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(
+      this, Manifest.permission.WRITE_EXTERNAL_STORAGE
+    ) == PackageManager.PERMISSION_GRANTED
   }
 
   companion object {

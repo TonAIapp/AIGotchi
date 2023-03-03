@@ -1,7 +1,6 @@
 package com.digwex.components.log.providers;
 
-import com.digwex.CorrectTime;
-import com.digwex.MainApplication;
+
 import com.digwex.components.log.Log;
 import com.digwex.components.log.LogProvider;
 
@@ -31,7 +30,7 @@ public class StreamLogProvider implements LogProvider {
 
   @Override
   public void println(int requestedLevel, String tag, String message) {
-    DateTime date = CorrectTime.INSTANCE.getNow();
+    DateTime date = DateTime.now();
     Calendar cal = Calendar.getInstance();
     cal.setTime(date.toDate());
     int day = cal.get(Calendar.DAY_OF_MONTH);
@@ -51,7 +50,7 @@ public class StreamLogProvider implements LogProvider {
 //    if (MainApplication.instance.isDebuggable())
 //      System.out.println(message);
 
-    mStream.append(dateFormat.print(CorrectTime.INSTANCE.getNow()))
+    mStream.append(dateFormat.print(DateTime.now()))
       .append(' ')
       .append(Log.LEVELS[requestedLevel])
       .append(tag).append(" - ")
