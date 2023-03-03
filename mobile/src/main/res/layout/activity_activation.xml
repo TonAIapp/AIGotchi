@@ -35,6 +35,6 @@
       android:layout_gravity="center_vertical"
       android:text=". . ."
       android:singleLine="true"
-      tools:ignore="HardcodedText" />
+      tools:ignore="HardcodedText,RtlCompat" />
   </FrameLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
